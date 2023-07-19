@@ -16,7 +16,7 @@ const cookieParser = require('cookie-parser')
 
 app.use(express.json());
 app.use(cors({
-    origin : ["http://localhost:3000"],
+    origin : ["https://wonderful-mandazi-3c1585.netlify.app"],
     methods:["GET" , "POST"],
     credentials:true
 }));
@@ -33,6 +33,10 @@ app.use(session({
         expires:60*60*24*1000
       }
 }));
+
+app.get('/',(req,res)=>{
+      res.send("The FireFlix server is running")
+})
 
 app.post('/register',async (req,res)=>{
     const email=req.body.email;
