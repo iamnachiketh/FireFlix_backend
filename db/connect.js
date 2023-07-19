@@ -3,12 +3,8 @@ const mysql=require('mysql2');
 
 const app = express();
 
-let dbConnection = mysql.createConnection({
-     user:"root",
-     host:"localhost",
-     password:"123456789",
-     database:"FireFlix"
-})
+const urlDB = "mysql://root:dHERmcfc9mc4JdYiY9GA@containers-us-west-207.railway.app:5888/railway"
+let dbConnection = mysql.createConnection(urlDB)
 
 dbConnection.connect();
 
